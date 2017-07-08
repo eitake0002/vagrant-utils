@@ -41,3 +41,10 @@ function ssh-connect()
 {
   vagrant ssh
 }
+
+# Description:
+#   Check status.
+function check-status()
+{
+  vagrant status
+}
