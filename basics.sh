@@ -34,3 +34,10 @@ function show-box-list()
 {
   vagrant box list
 }
+
+# Description.
+#   SSH Connection.
+function ssh-connect()
+{
+  vagrant ssh
+}
