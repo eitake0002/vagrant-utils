@@ -1,5 +1,25 @@
 
 # Description:
+#   Init vagrant.
+#   $ vagrant init [box_name] [box_url]
+# Usage:
+#   vagrant-init <box_hostname> <box_url>
+# Example:
+#   vagrant-init mybox https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box
+function vagrant-init()
+{
+  box_hostname=$1
+  box_url=$2
+  
+  if [ -z ${box_hostname} ] || [ ${box_url} ]; then
+    echo "Argument is not correct!" >&2
+    return 1;
+  fi
+  
+  vagrant init ${box_hostname} ${box_url}
+}
+
+# Description:
 #   Show vagrant version.
 function check-version()
 {
@@ -61,6 +81,14 @@ function halt-vm()
 function destroy-vm()
 {
   vagrant destroy
+}
+
+# Description:
+#   Reload virtual machine.
+#   Same as halt and up manually.
+function reload-vm()
+{
+  vagrant reload
 }
 
 # Description:
