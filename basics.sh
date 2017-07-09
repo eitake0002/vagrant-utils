@@ -50,6 +50,13 @@ function check-status()
 }
 
 # Description:
+#   Halt Virtual Machine.
+function halt-vm()
+{
+  vagrant halt
+}
+
+# Description:
 #   Destroy virtual machine.
 function destroy-vm()
 {
