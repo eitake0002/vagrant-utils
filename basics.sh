@@ -48,3 +48,10 @@ function check-status()
 {
   vagrant status
 }
+
+# Description:
+#   Destroy virtual machine.
+function destroy-vm()
+{
+  vagrant destroy
+}
