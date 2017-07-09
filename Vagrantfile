@@ -31,6 +31,16 @@ Vagrant.configure("2") do |config|
     EOT
   end
 
+  config.vm.box = "new_box"
+
+  config.vm.define :new_box do |new_box|
+    new_box.vm.hostname = "newbox"
+    new_box.vm.network :private_network, ip:"192.168.33.13"
+    new_box.vm.provision :shell, :inline => <<-EOT
+      echo "Hello, DB"
+    EOT
+  end
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
