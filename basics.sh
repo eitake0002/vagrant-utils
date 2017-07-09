@@ -64,7 +64,8 @@ function destroy-vm()
 }
 
 # Description:
-#   Export box.
+#   Export box. After exporting, you can add box like below.
+#   $ vagrant box add new_box
 # Usage:
 #   export-box [<vm_hostname>]
 # Example:
@@ -79,4 +80,3 @@ function export-box()
     vagrant package ${box_hostname}
   fi
 }
-
