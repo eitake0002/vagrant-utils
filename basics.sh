@@ -62,3 +62,21 @@ function destroy-vm()
 {
   vagrant destroy
 }
+
+# Description:
+#   Export box.
+# Usage:
+#   export-box [<vm_hostname>]
+# Example:
+#   export-box
+#   export-box dbvm
+function export-box()
+{
+  box_hostname=$1
+  if [ -z ${box_hostname} ]; then
+    vagrant package
+  else
+    vagrant package ${box_hostname}
+  fi
+}
+
