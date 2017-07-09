@@ -84,6 +84,14 @@ function destroy-vm()
 }
 
 # Description:
+#   Reload virtual machine.
+#   Same as halt and up manually.
+function reload-vm()
+{
+  vagrant reload
+}
+
+# Description:
 #   Export box. After exporting, you can add box like below.
 #   $ vagrant box add new_box
 # Usage:
