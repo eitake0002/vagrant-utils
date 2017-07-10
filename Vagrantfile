@@ -41,6 +41,16 @@ Vagrant.configure("2") do |config|
     EOT
   end
 
+  config.vm.box = "centos7"
+
+  config.vm.define :centos7 do |centos7|
+    centos7.vm.hostname = "centos7"
+    centos7.vm.network :private_network, ip:"192.168.33.14"
+    centos7.vm.provision :shell, :inline => <<-EOT
+      echo "Hello, CentOS7"
+    EOT
+  end
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
