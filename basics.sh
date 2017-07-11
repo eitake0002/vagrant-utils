@@ -63,6 +63,16 @@ function ssh-connect()
 }
 
 # Description:
+#   Execute command inside vm directly.
+# Usage:
+#   ssh-command-exec-directly
+function ssh-command-exec-directly()
+{
+  com=$1
+  vagrant ssh -c "${com}"
+}
+
+# Description:
 #   Check status.
 function check-status()
 {
