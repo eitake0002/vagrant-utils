@@ -10,3 +10,10 @@ http://www.vagrantbox.es/
 vagrant official document
 
 https://docs.vagrantup.com.
+
+## Cheet Sheet
+
+version check
+```
+vagrant -v
+```
