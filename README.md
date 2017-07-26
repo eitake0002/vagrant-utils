@@ -17,3 +17,28 @@ version check
 ```
 vagrant -v
 ```
+
+show help
+```
+vagrant -h
+```
+
+box help
+```
+vagrant box -h
+```
+
+add boxes
+```
+vagrant box add <name> <url>
+```
+
+list boxes
+```
+vagrant box list
+```
+
+remove box
+```
+vagrant box remove <box_name>
+```
