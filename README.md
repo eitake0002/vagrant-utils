@@ -9,4 +9,6 @@ http://www.vagrantbox.es/
 
 vagrant official document
 
-https://docs.vagrantup.com.
+https://docs.vagrantup.com
+
+
