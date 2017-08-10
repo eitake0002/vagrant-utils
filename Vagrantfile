@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
   # Apache httpd setup.
   config.vm.define :ansible do |ansible|
-    ansible.vm.hostname = "web"
+    ansible.vm.hostname = "ansible"
     ansible.vm.network :private_network, ip: "192.168.33.10", virtualbox_intnet: true
     ansible.vm.provision "ansible" do |ansible|
       ansible.inventory_path = "ansible/hosts"
