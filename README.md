@@ -1,14 +1,15 @@
 # vagrant-utils
-vagrant command utilities
 
-Version : 1.9.7 or later.
+Vagrant setup templates. 
 
-vagrantbox.es
+## Version
 
-http://www.vagrantbox.es/
+Supporting 1.9.7 or later.
 
-vagrant official document
+## Vagrant Official Document
 
 https://docs.vagrantup.com
 
+## Vagrantbox.es
 
+http://www.vagrantbox.es/
