@@ -1,0 +1,28 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  
+  config.vm.box = "centos7"
+  config.vm.box_url = "https://github.com/vezzoni/vagrant-vboxes/releases/download/0.0.1/centos-7-x86_64.box"
+
+  config.vm.define :nginx do |nginx|
+    # ホスト名の指定
+    nginx.vm.hostname = "nginx"
+
+    # ポートフォワードの設定
+    nginx.vm.network :forwarded_port, guest: 80, host: 8080
+    
+    # 共有フォルダの設定
+    nginx.vm.synced_folder "./", "/vagrant" 
+    
+    # Nginxのインストールと起動
+    nginx.vm.provision :shell, :inline => <<-EOT
+      sudo cp /vagrant/nginx.repo /etc/yum.repos.d/
+      sudo yum -y --enablerepo=nginx install nginx
+      sudo systemctl stop firewalld
+      sudo systemctl start nginx
+    EOT
+  end
+end
+
