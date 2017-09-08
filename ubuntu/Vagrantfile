@@ -1,0 +1,20 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  
+  config.vm.box = "ubuntu/trusty64"
+
+  config.vm.define :ubuntu do |ubuntu|
+
+    ubuntu.vm.hostname = "ubuntu"
+    
+    ubuntu.vm.provision :shell, :inline => <<-EOT
+      sudo apt-get update -y
+      sudo apt-get update -y
+      sudo apt-get install -y ubuntu-desktop
+    EOT
+
+  end
+end
+
